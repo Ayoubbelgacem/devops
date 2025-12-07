@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven 3.6.3' // Nom de l'installation Maven dans Jenkins
+        maven 'M2_HOME'  // correspond à l'installation Maven existante dans Jenkins
     }
 
     stages {
