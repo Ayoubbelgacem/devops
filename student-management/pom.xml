@@ -23,6 +23,17 @@
         <jacoco.version>0.8.11</jacoco.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- Sonar properties -->
+        <sonar.host.url>http://192.168.1.38:9000</sonar.host.url>
+        <sonar.login>squ_97c10b43908371602ff918f698a7fc327a4aa952</sonar.login>
+        <sonar.exclusions>
+            */tn/esprit/studentmanagement/model/*,
+            */tn/esprit/studentmanagement/entities/*, 
+            */tn/esprit/studentmanagement/dto/*,
+            */tn/esprit/studentmanagement/config/*,
+            */tn/esprit/studentmanagement/controllers/*, 
+            **/*Application.java
+        </sonar.exclusions>
     </properties>
 
     <dependencies>
@@ -105,7 +116,6 @@
                 </executions>
             </plugin>
 
-
             <!-- Maven Surefire Plugin pour exécuter les tests -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -145,6 +155,13 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+
+            <!-- Sonar Maven Plugin -->
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>4.0.0.4121</version>
             </plugin>
         </plugins>
     </build>
