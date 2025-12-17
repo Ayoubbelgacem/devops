@@ -15,7 +15,10 @@ public class EnrollmentController {
     IEnrollment enrollmentService;
     @GetMapping("/getAllEnrollment")
     public List<Enrollment> getAllEnrollment() { return enrollmentService.getAllEnrollments(); }
-
+    public void setEnrollmentService(IEnrollment enrollmentService) {
+        this.enrollmentService = enrollmentService;
+    }
+public  EnrollmentController(){}
     @GetMapping("/getEnrollment/{id}")
     public Enrollment getEnrollment(@PathVariable Long id) { return enrollmentService.getEnrollmentById(id); }
 

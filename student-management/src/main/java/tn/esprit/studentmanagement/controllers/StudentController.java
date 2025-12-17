@@ -17,7 +17,10 @@ IStudentService studentService;
 
     @GetMapping("/getAllStudents")
     public List<Student> getAllStudents() { return studentService.getAllStudents(); }
-
+    public void setStudentService(IStudentService studentService) {
+        this.studentService = studentService;
+    }
+public StudentController(){}
     @GetMapping("/getStudent/{id}")
     public Student getStudent(@PathVariable Long id) { return studentService.getStudentById(id); }
 
