@@ -29,7 +29,7 @@
         <sonar.host.url>http://localhost:9000</sonar.host.url>
         <sonar.login>squ_97c10b43908371602ff918f698a7fc327a4aa952</sonar.login>
         <sonar.java.binaries>target/classes</sonar.java.binaries>
-        <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/jacoco-report/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
         <sonar.exclusions>
             */model/*,
             */dto/*,
