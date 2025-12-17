@@ -29,7 +29,7 @@
         <sonar.host.url>http://localhost:9000</sonar.host.url>
         <sonar.login>squ_97c10b43908371602ff918f698a7fc327a4aa952</sonar.login>
         <sonar.java.binaries>target/classes</sonar.java.binaries>
-        <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/jacoco-report/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
         <sonar.exclusions>
             */model/*,
             */dto/*,
@@ -76,7 +76,6 @@
             <artifactId>h2</artifactId>
         </dependency>
 
-
         <!-- OpenAPI -->
         <dependency>
             <groupId>org.springdoc</groupId>
@@ -118,12 +117,15 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${jacoco.version}</version>
                 <executions>
+                    <!-- Préparer l'agent JaCoCo -->
                     <execution>
                         <id>prepare-agent</id>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
                     </execution>
+
+                    <!-- Générer le rapport XML & HTML -->
                     <execution>
                         <id>report</id>
                         <phase>verify</phase>
@@ -131,7 +133,7 @@
                             <goal>report</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${project.build.directory}/site/jacoco</outputDirectory>
+                            <outputDirectory>${project.build.directory}/jacoco-report</outputDirectory>
                             <formats>
                                 <format>XML</format>
                                 <format>HTML</format>
